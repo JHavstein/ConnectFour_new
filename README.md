@@ -1,3 +1,2 @@
-# ConnectFour_new
-# ConnectFour_new
-# connectFour_New2
+# Connect-Four
+# Java project in the course DM550: Introduction to programming 
