@@ -21,7 +21,7 @@ public class CFGame implements Game {
     public CFGame(int numPlayers) {
         this.currentPlayer = 1;
         this.numPlayers = numPlayers;
-        this.board = new CFBoard();
+        this.board = new CFBoard(numPlayers);
     }
 
     @Override
@@ -51,12 +51,12 @@ public class CFGame implements Game {
 
     @Override
     public int getHorizontalSize() {
-        return this.board.getSize();
+        return this.board.getSizeX();
     }
 
     @Override
     public int getVerticalSize() {
-        return this.board.getSize();
+        return this.board.getSizeY();
     }
 
     @Override

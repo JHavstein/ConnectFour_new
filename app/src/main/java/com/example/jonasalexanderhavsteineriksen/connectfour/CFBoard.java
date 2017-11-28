@@ -1,7 +1,7 @@
 package com.example.jonasalexanderhavsteineriksen.connectfour;
 
 /** represents a tic tac toe board of a given size */
-public class CFBoard { //test
+public class CFBoard {
 
     /** 2-dimensional array representing the board
      * coordinates are counted from top-left (0,0) to bottom-right (size-1, size-1)
@@ -28,9 +28,9 @@ public class CFBoard { //test
     }
 
     /** constructor for creating an empty board for a given number of players */
-    public CFBoard() {
-        this.xSize = 7;
-        this.ySize = 6;
+    public CFBoard(int numPlayers) {
+        this.xSize = numPlayers*3;
+        this.ySize = numPlayers*2;
         this.board = new int[xSize][ySize];
     }
 
@@ -51,8 +51,8 @@ public class CFBoard { //test
      * checks that the player number is valid
      */
     public void addMove(Coordinate c, int player) {
-        if (c.checkBoundaries(this.xSize,this.ySize) == true && player < 3) {
-            for (int y = this.ySize-1; y > 0; y--){
+        if (c.checkBoundaries(this.xSize,this.ySize) == true && player <= this.ySize/2) { //this.ySize/2=numPlayers
+            for (int y = this.ySize-1; y >= 0; y--){
                 if (this.board[c.getX()][y] == 0){
                     this.board[c.getX()][y] = player;
                     break;
@@ -103,11 +103,12 @@ public class CFBoard { //test
     private int checkSequence(Coordinate start, int dx, int dy) {
         int x = start.getX();
         int y = start.getY();
-        if (x+2*dx >= 0 && x+2*dx < this.xSize && y+2*dy >= 0 && y+2*dy < this.ySize) {
+        if (x+3*dx >= 0 && x+3*dx < this.xSize && y+3*dy >= 0 && y+3*dy < this.ySize) {
             if (this.board[x][y] == 0) {
                 return 0;
             }
-            if (this.board[x][y] == this.board[x + dx][y + dy] && this.board[x][y] == this.board[x + 2 * dx][y + 2 * dy]) {
+            if (this.board[x][y] == this.board[x + dx][y + dy] && this.board[x][y] == this.board[x + 2 * dx][y + 2 * dy] &&
+                    this.board[x][y] == this.board[x+3*dx][y+3*dy]) {
                 return this.board[start.getX()][start.getY()];
             }
         }
@@ -116,9 +117,10 @@ public class CFBoard { //test
     }
 
     /** getter for size of the board */
-    public int getSize() {
-        return this.ySize;
+    public int getSizeX() {
+        return this.xSize;
     }
+    public int getSizeY() {return this.ySize;}
 
     /** pretty printing of the board
      * useful for debugging purposes
