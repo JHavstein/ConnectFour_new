@@ -31,14 +31,14 @@ public class AppUI extends AppCompatActivity implements UserInterface {
         layout.addView(tv);
         final NumberPicker np = new NumberPicker(this);
         np.setMinValue(2);
-        np.setMaxValue(6);
+        np.setMaxValue(4);
         layout.addView(np);
         Button b = new AppCompatButton(this);
         b.setText("OK");
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AppUI.this.startGame(new CFGame(2));
+                AppUI.this.startGame(new CFGame(np.getValue()));
             }
         });
         layout.addView(b);
