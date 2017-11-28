@@ -70,7 +70,7 @@ public class AppUI extends AppCompatActivity implements UserInterface {
         final int xSize = game.getHorizontalSize();
         final int ySize = game.getVerticalSize();
         for (int i = 0; i < ySize; i++) {
-            layout.setColumnStretchable(i, true);
+          layout.setColumnStretchable(i, true);
         }
         for (int i = 0; i < ySize; i++) {
             TableRow row = new TableRow(AppUI.this);
