@@ -1,7 +1,7 @@
 package com.example.jonasalexanderhavsteineriksen.connectfour;
 
 /** represents a tic tac toe board of a given size */
-public class CFBoard {
+public class CFBoard { //test
 
     /** 2-dimensional array representing the board
      * coordinates are counted from top-left (0,0) to bottom-right (size-1, size-1)
