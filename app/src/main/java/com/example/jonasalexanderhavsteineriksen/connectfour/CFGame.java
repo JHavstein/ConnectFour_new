@@ -65,7 +65,7 @@ public class CFGame implements Game {
         if (winner > 0) {
             this.ui.showResult("Player "+winner+" wins!");
         }
-        if (this.board.checkFull()) {
+        else if (this.board.checkFull()) {
             this.ui.showResult("This is a DRAW!");
         }
     }
