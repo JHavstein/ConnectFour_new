@@ -26,7 +26,7 @@ public class CFGame implements Game {
 
     @Override
     public String getTitle() {
-        return this.numPlayers+"-way Tic Tac Toe";
+        return this.numPlayers+"-way Connect Four";
     }
 
     @Override
