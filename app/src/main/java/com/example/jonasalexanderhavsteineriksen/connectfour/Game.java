@@ -11,9 +11,7 @@ public interface Game {
     /** vertical size of the board */
     int getVerticalSize();
 
-    /** string representation of the position
-     * useful for user interface
-     */
+    /** string representation of the position */
     String getContent(Coordinate pos);
 
     /** record a move on a given position */

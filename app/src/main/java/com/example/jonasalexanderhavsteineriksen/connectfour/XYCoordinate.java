@@ -40,10 +40,7 @@ public class XYCoordinate implements Coordinate {
 
     @Override
     public Coordinate shift(int dx, int dy) {
-        return new XYCoordinate(this.x+dx,this.y+dy); // makes new x from existing
-        // returns the new coordinates as class isntances of
-        // XYCoordinate (the return type was originally 'Coordinate' but coordinate is not a class
-        // - it's an interface? Error from Peter? Misunderstanding from me?
+        return new XYCoordinate(this.x+dx,this.y+dy);
     }
 
 }
